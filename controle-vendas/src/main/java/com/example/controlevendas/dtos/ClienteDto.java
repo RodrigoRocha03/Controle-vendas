@@ -6,10 +6,15 @@ public class ClienteDto {
 
 	@NotBlank
 	private String cpf;
+
 	@NotBlank
 	private String nome;
+
 	@NotBlank
 	private String endereco;
+
+	public ClienteDto() {
+	}
 
 	public String getCpf() {
 		return cpf;

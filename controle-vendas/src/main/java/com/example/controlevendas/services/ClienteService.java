@@ -24,10 +24,6 @@ public class ClienteService {
 		return clienteRepository.save(cliente);
 	}
 
-	/*public boolean existsByCpf(String cpf) {
-		return clienteRepository.existsByCpf(cpf);
-	}*/
-
 	public Optional<Cliente> findByCpf(String cpf) {
 		return clienteRepository.findById(cpf);
 	}
@@ -40,4 +36,5 @@ public class ClienteService {
 	public void delete(Cliente cliente) {
 		clienteRepository.delete(cliente);
 	}
+
 }

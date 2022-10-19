@@ -1,5 +1,7 @@
 package com.example.controlevendas.services;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
@@ -20,5 +22,9 @@ public class ProdutoService {
 	@Transactional
 	public Produto save(Produto produto) {
 		return produtoRepository.save(produto);
+	}
+
+	public List<Produto> findAll() {
+		return produtoRepository.findAll();
 	}
 }

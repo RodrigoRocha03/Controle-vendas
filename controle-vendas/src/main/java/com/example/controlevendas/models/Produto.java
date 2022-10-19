@@ -3,9 +3,12 @@ package com.example.controlevendas.models;
 import java.util.UUID;
 
 import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -26,7 +29,12 @@ public class Produto {
 	private String descricao;
 
 	@Column(nullable = false)
-	private float valorProduto;
+	private String valorProduto;
+	
+	@ManyToOne
+    @JoinColumn(name="pedido_id_pedido", nullable=false)
+	private Pedido pedido;
+
 
 	public UUID getIdProduto() {
 		return IdProduto;
@@ -44,12 +52,20 @@ public class Produto {
 		this.descricao = descricao;
 	}
 
-	public float getValorProduto() {
+	public String getValorProduto() {
 		return valorProduto;
 	}
 
-	public void setValorProduto(float valorProduto) {
+	public void setValorProduto(String valorProduto) {
 		this.valorProduto = valorProduto;
+	}
+
+	public Pedido getPedido() {
+		return pedido;
+	}
+
+	public void setPedido(Pedido pedido) {
+		this.pedido = pedido;
 	}
 
 }

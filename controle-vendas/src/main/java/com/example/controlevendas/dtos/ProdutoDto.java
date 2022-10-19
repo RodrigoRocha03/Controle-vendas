@@ -8,7 +8,10 @@ public class ProdutoDto {
 	private String descricao;
 
 	@NotBlank
-	private float ValorProduto;
+	private String ValorProduto;
+
+	public ProdutoDto() {
+	}
 
 	public String getDescricao() {
 		return descricao;
@@ -18,11 +21,11 @@ public class ProdutoDto {
 		this.descricao = descricao;
 	}
 
-	public float getValorProduto() {
+	public String getValorProduto() {
 		return ValorProduto;
 	}
 
-	public void setValorProduto(float valorProduto) {
+	public void setValorProduto(String valorProduto) {
 		ValorProduto = valorProduto;
 	}
 
